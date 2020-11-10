@@ -1,3 +1,10 @@
+/* body background color: #EEEBD3 Beige*/
+/* headings text color: #255957 Dark Slate Grey*/
+
+body {
+	background-color: #EEEBD3;
+}
 .landingPage h1 {
-	color: blue;
+	color: #255957;
+	text-align: center;
 }

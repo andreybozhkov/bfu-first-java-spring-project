@@ -1,13 +1,16 @@
 package firstProject.data;
 
+import java.util.SortedSet;
 import java.util.UUID;
 
-public class PersonClass {
+import firstProject.data.interfaces.PersonInterface;
+
+public class PersonClass implements PersonInterface {
 	private String id;
 	private String name;
 	private String gender;
 	private int age;
-	private String[] productInterests;
+	private SortedSet<String> interests;
 	
 	public String getId() {
 		return id;
@@ -21,23 +24,29 @@ public class PersonClass {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getGender() {
-		return gender;
-	}
-	public void setGender(String gender) {
-		this.gender = gender;
-	}
 	public int getAge() {
 		return age;
 	}
 	public void setAge(int age) {
 		this.age = age;
 	}
-	public String[] getProductInterests() {
-		return productInterests;
+	public String getGender() {
+		return gender;
 	}
-	public void setProductInterests(String[] productInterests) {
-		this.productInterests = productInterests;
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
+	public SortedSet<String> getInterests() { // get the array of String interests
+		return this.interests;
+	}
+	public boolean checkForInterest(String interest) { // get single element from the array of String interests
+		return this.interests.contains(interest);
+	};
+	public void addInterest(String interest) { // add single element from the array of String interests
+		this.interests.add(interest);
+	}
+	public void removeInterest(String interest) { // remove single element from the array of String interests
+		this.interests.remove(interest);
 	}
 	
 	public PersonClass(String name, String gender, int age) {
