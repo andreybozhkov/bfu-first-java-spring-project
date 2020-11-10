@@ -1,22 +1,22 @@
 package firstProject.controllers;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import firstProject.BfuFirstSpringProjectApplication;
 import firstProject.data.PersonClass;
 
 @Controller
 public class LandingPageController {
-	@RequestMapping("/")
-	public String landingPage() {
-		PersonClass[] tempPersonsArr = this.generatePerson();
-		System.out.println(tempPersonsArr[0].getId());
-		System.out.println(tempPersonsArr[1].getId());
+	@RequestMapping(value = "/", method = RequestMethod.GET)
+	public String landingPage(Model model) {
+		model.addAttribute("persons", this.getPersons());
 		return "landingPage";
 	}
 	
-	private PersonClass[] generatePerson() {
+	private PersonClass[] getPersons() {
 		return BfuFirstSpringProjectApplication.getPersons();
 	}
 }
