@@ -2,11 +2,8 @@ package firstProject.services;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-
 import org.springframework.stereotype.Service;
-
 import firstProject.data.dataClasses.PersonClass;
-import firstProject.data.dataClasses.ProductClass;
 
 @Service
 public class PersonsService {
@@ -23,7 +20,7 @@ public class PersonsService {
 	}
 	
 	public void addPerson(PersonClass newPerson) {
-		PersonsService.personsArrList.add(newPerson);
+		personsArrList.add(newPerson);
 	}
 	
 	public boolean removePerson(String personID) {
