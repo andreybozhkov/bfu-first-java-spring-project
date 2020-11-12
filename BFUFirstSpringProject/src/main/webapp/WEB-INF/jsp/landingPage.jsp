@@ -16,5 +16,10 @@
 				<li><c:out value="${person.id}"/> - <c:out value="${person.name}"/></li>
 			</c:forEach>
 		</ul>
+		<ul>
+			<c:forEach var="product" items="${products}">
+				<li><c:out value="${product.id}"/> - <c:out value="${product.name}"/> - <c:out value="${product.price}"/></li>
+			</c:forEach>
+		</ul>
 	</body>
 </html>
