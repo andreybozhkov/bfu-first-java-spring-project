@@ -1,4 +1,4 @@
-package firstProject.data;
+package firstProject.data.dataClasses;
 
 import java.util.SortedSet;
 import java.util.UUID;

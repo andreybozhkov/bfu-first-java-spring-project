@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import firstProject.BfuFirstSpringProjectApplication;
-import firstProject.data.PersonClass;
+import firstProject.data.dataClasses.PersonClass;
 
 @Controller
 public class LandingPageController {
