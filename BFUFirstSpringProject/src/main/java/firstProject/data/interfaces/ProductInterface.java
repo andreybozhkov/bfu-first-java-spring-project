@@ -1,5 +1,6 @@
 package firstProject.data.interfaces;
 
+import java.util.Map;
 import java.util.SortedSet;
 
 public interface ProductInterface {
@@ -13,7 +14,7 @@ public interface ProductInterface {
 	public short getQtyAvailable();
 	public void setQtyAvailable(short newQty);
 	public void incrQtyByAmount(short incrQty);
-	public void decrQtyByAmount(short decrQty);
+	public Map<String, String> decrQtyByAmount(short decrQty); // return Map<String, String> of format 'OK decreased by xx' or 'Not enough, only X'
 	public SortedSet<String> getTags(); // get the SortedSet of String tags
 	public boolean checkForTag(String tagToCheck); // get single element from the SortedSet of String tags
 	public void addTag(String tagToAdd); // add single element from the SortedSet of String tags
