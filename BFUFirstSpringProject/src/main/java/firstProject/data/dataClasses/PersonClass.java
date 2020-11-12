@@ -36,16 +36,16 @@ public class PersonClass implements PersonInterface {
 	public void setGender(String gender) {
 		this.gender = gender;
 	}
-	public SortedSet<String> getInterests() { // get the array of String interests
+	public SortedSet<String> getInterests() { // get the SortedSet of String interests
 		return this.interests;
 	}
-	public boolean checkForInterest(String interest) { // get single element from the array of String interests
+	public boolean checkForInterest(String interest) { // get single element from the SortedSet of String interests
 		return this.interests.contains(interest);
 	};
-	public void addInterest(String interest) { // add single element from the array of String interests
+	public void addInterest(String interest) { // add single element from the SortedSet of String interests
 		this.interests.add(interest);
 	}
-	public void removeInterest(String interest) { // remove single element from the array of String interests
+	public void removeInterest(String interest) { // remove single element from the SortedSet of String interests
 		this.interests.remove(interest);
 	}
 	
