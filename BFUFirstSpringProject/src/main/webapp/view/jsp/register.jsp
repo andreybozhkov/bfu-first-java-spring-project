@@ -17,7 +17,7 @@
 	<body>
 		<h1>Welcome to the e-Store powered by Java Spring Boot!</h1>
 		<h2>Register</h2>
-		<jsp:useBean id="newPersonBean" class="firstProject.beans.NewPersonBean" scope="request">
+		<jsp:useBean id="newPersonBean" class="firstProject.beans.NewPersonBean" scope="page">
 			<form action="/register" method="POST">
 				<label for="id">User ID:
 					<input type="text" id="id" name="id" value="${newPersonBean.getId()}">

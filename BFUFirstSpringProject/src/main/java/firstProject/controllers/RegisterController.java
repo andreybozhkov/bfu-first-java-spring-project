@@ -1,6 +1,7 @@
 package firstProject.controllers;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -21,13 +22,14 @@ public class RegisterController {
 	}
 	
 	@RequestMapping(value = "/register", method = RequestMethod.POST)
-	public String registerPost(HttpServletRequest request) {
+	public String registerPost(HttpServletRequest request, HttpSession session) {
 		String id = request.getParameter("id");
 		String name = request.getParameter("name");
 		int age = Integer.parseInt(request.getParameter("age"));
 		String gender = request.getParameter("gender");
 		PersonClass newPerson = new PersonClass(id, name, gender, age);
 		personsService.addPerson(newPerson);
-		return "register";
+		session.setAttribute("user", newPerson);
+		return "user";
 	}
 }
