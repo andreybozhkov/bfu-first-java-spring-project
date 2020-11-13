@@ -2,7 +2,6 @@ package firstProject.data.dataClasses;
 
 import java.util.Map;
 import java.util.SortedSet;
-import java.util.UUID;
 import firstProject.data.interfaces.ProductInterface;
 
 public class ProductClass implements ProductInterface {
@@ -16,7 +15,7 @@ public class ProductClass implements ProductInterface {
 		return this.id;
 	}
 	
-	private void setId(String id) {
+	public void setId(String id) {
 		this.id = id;
 	};
 
@@ -80,8 +79,8 @@ public class ProductClass implements ProductInterface {
 		this.tags.remove(tagToRemove);
 	}
 	
-	public ProductClass(String name, float initialPrice, short initialQty) {
-		this.setId(UUID.randomUUID().toString());
+	public ProductClass(String id, String name, float initialPrice, short initialQty) {
+		this.setId(id);
 		this.setName(name);
 		this.setPrice(initialPrice);
 		this.setQtyAvailable(initialQty);

@@ -5,8 +5,7 @@ import java.util.SortedSet;
 
 public interface ProductInterface {
 	public String getId();
-	@SuppressWarnings("unused")
-	private void setId(String id) {};
+	public void setId(String id);
 	public String getName();
 	public void setName(String name);
 	public float getPrice();

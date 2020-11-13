@@ -1,9 +1,10 @@
-package firstProject.data.dataClasses;
+package firstProject.beans;
 
+import java.io.Serializable;
 import java.util.SortedSet;
-import firstProject.data.interfaces.PersonInterface;
+import java.util.UUID;
 
-public class PersonClass implements PersonInterface {
+public class NewPersonBean implements Serializable {
 	private String id;
 	private String name;
 	private String gender;
@@ -40,6 +41,9 @@ public class PersonClass implements PersonInterface {
 	public boolean checkForInterest(String interest) { // get single element from the SortedSet of String interests
 		return this.interests.contains(interest);
 	};
+	public void setInterests(SortedSet<String> interests) { // add single element from the SortedSet of String interests
+		this.interests = interests;
+	}
 	public void addInterest(String interest) { // add single element from the SortedSet of String interests
 		this.interests.add(interest);
 	}
@@ -47,10 +51,9 @@ public class PersonClass implements PersonInterface {
 		this.interests.remove(interest);
 	}
 	
-	public PersonClass(String id, String name, String gender, int age) {
-		this.setId(id);
-		this.setName(name);
-		this.setGender(gender);
-		this.setAge(age);
+	public NewPersonBean() {
+		this.setId(UUID.randomUUID().toString());
+		this.setName("Type your name here please.");
+		this.setAge(18);
 	}
 }

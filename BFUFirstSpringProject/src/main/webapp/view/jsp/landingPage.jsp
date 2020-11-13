@@ -9,17 +9,17 @@
 		<title>Java Spring Boot: e-Store</title>
 		<link rel="stylesheet" href="../../css/styles.css">
 	</head>
-	<body class="landingPage">
+	<body>
 		<h1>Welcome to the e-Store powered by Java Spring Boot!</h1>
-		<ul>
-			<c:forEach var="person" items="${persons}">
-				<li><c:out value="${person.id}"/> - <c:out value="${person.name}"/></li>
-			</c:forEach>
-		</ul>
-		<ul>
-			<c:forEach var="product" items="${products}">
-				<li><c:out value="${product.id}"/> - <c:out value="${product.name}"/> - <c:out value="${product.price}"/></li>
-			</c:forEach>
-		</ul>
+		<%
+			Object user = session.getAttribute("user");
+		%>
+		<c:if test="${user == null}">
+			<h2><a href="<c:url value="/register"/>">Register</a></h2>
+			<h2><a href="/login">Login</a></h2>
+		</c:if>
+		<c:if test="${user != null}">
+			<h2><a href="/logout">Logout</a></h2>
+		</c:if>
 	</body>
 </html>

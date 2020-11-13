@@ -4,8 +4,7 @@ import java.util.SortedSet;
 
 public interface PersonInterface {
 	public String getId();
-	@SuppressWarnings("unused")
-	private void setId(String id) {};
+	public void setId(String id);
 	public String getName();
 	public void setName(String name);
 	public int getAge();
