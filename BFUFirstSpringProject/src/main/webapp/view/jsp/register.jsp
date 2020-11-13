@@ -28,7 +28,7 @@
 				</label>
 				<br>
 				<label for="age">Age
-					<input type="range" id="age" name="age" min="18" max="100" step="1" value="18" onchange="updateAgeValueField(this.value)" value="${newPersonBean.getAge()}">
+					<input type="range" id="age" name="age" min="18" max="100" step="1" onchange="updateAgeValueField(this.value)" value="${newPersonBean.getAge()}">
 				</label>
 				<p id="ageDisplay">Age: ${newPersonBean.getAge()}</p>
 				<br>
