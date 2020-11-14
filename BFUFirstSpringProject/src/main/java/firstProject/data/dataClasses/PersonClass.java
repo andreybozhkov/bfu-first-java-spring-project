@@ -1,6 +1,8 @@
 package firstProject.data.dataClasses;
 
 import java.util.SortedSet;
+import java.util.TreeSet;
+
 import firstProject.data.interfaces.PersonInterface;
 
 public class PersonClass implements PersonInterface {
@@ -52,5 +54,6 @@ public class PersonClass implements PersonInterface {
 		this.setName(name);
 		this.setGender(gender);
 		this.setAge(age);
+		this.interests = new TreeSet<String>();
 	}
 }

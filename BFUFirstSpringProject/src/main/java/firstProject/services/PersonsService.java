@@ -21,6 +21,14 @@ public class PersonsService {
 		personsArrList.add(newPerson);
 	}
 	
+	public void updatePerson(PersonClass newPerson) {
+		for (int i = 0; i < personsArrList.size(); i++) {
+			if (personsArrList.get(i).getId().equals(newPerson.getId())) {
+				personsArrList.set(i, newPerson);
+			}
+		}
+	}
+	
 	public boolean removePerson(String personID) {
 		for (int i = 0; i < personsArrList.size(); i++) {
 			if (personsArrList.get(i).getId() == personID) {
