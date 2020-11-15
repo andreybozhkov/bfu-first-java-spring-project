@@ -1,5 +1,7 @@
 package firstProject.controllers;
 
+import java.util.Map;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -28,19 +30,29 @@ public class UserController {
 		int age = Integer.parseInt(request.getParameter("age"));
 		String gender = request.getParameter("gender");
 		String newInterest = request.getParameter("addInterest");
+		Map<String, String[]> checkedInterestsToRemove = request.getParameterMap();
+		
 		PersonClass currentPerson = (PersonClass)session.getAttribute("user");
+		
+		checkedInterestsToRemove.forEach((key, values) -> {
+			if(key.startsWith("removeInterest")) {
+				currentPerson.removeInterest(values[0]);
+			}
+		});
+		
 		if (gender != null) {
 			currentPerson.setGender(gender);
 		}
 		if (newInterest.length() > 0) {
-			System.out.println("New interest value:" + newInterest);
 			currentPerson.addInterest(newInterest);
 		}
 		currentPerson.setId(id);
 		currentPerson.setName(name);
 		currentPerson.setAge(age);
+		
 		personsService.updatePerson(currentPerson);
 		session.setAttribute("user", currentPerson);
+		
 		return "user";
 	}
 }

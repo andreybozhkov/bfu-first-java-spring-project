@@ -34,7 +34,7 @@
 				<input type="range" id="age" name="age" min="18" max="100" step="1" onchange="updateAgeValueField(this.value)" value="${user.getAge()}">
 			</label>
 			<p id="ageDisplay">Age: ${user.getAge()}</p>
-			<p>Gender: ${user.getGender()}</p>
+			<p>Gender: ${user.getGender()}. If you select gender from below, gender info will be updated.</p>
 			<label for="gender-male">Male
 				<input type="radio" id="gender-male" name="gender" value="male">
 			</label>
@@ -45,19 +45,22 @@
 				<input type="radio" id="gender-other" name="gender" value="other">
 			</label>
 			<br>
-			<h3>Add interest (one at a time):</h3>
+			<h3>Add interest (one at a time, then press Update your details button):</h3>
 			<label for="addInterest">Name:
 				<input type="text" id="addInterest" name="addInterest">
 			</label>
 			<br>
 			<br>
+			<h3>Your interests: (check an interest if you would like to delete it, then press Update your details button)</h3>
+			<ul id="interests">
+				<c:forEach items="${user.getInterests()}" var="interest" varStatus="loopStatus">
+					<li><c:out value="${interest}"></c:out></li>
+					<label for="removeInterest-${loopStatus.getIndex()}">
+						<input type="checkbox" id="removeInterest-${loopStatus.getIndex()}" name="removeInterest-${loopStatus.getIndex()}" value="${interest}">
+					</label>
+				</c:forEach>
+			</ul>
 			<button type="submit">Update your details</button>
 		</form>
-		<h3>Your interests:</h3>
-		<ul id="interests">
-			<c:forEach items="${user.getInterests()}" var="interest">
-				<li><c:out value="${interest}"></c:out></li>
-			</c:forEach>
-		</ul>
 	</body>
 </html>
