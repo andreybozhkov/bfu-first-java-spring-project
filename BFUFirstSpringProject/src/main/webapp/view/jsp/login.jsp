@@ -11,16 +11,16 @@
 	</head>
 	<body>
 		<h1>Welcome to the e-Store powered by Java Spring Boot!</h1>
-		<%
-			Object user = session.getAttribute("user");
-		%>
-		<c:if test="${user == null}">
-			<h2><a href="/register">Register</a></h2>
-			<h2><a href="/login">Login</a></h2>
+		<h2><a href="/register">Register</a></h2>
+		<h2>Login with User ID</h2>
+		<c:if test="${error != null}">
+			<p><c:out value="${error}"></c:out></p>
 		</c:if>
-		<c:if test="${user != null}">
-			<p>Hello, <c:out value="${user.getName()}"></c:out></p>
-			<h2><a href="/logout">Logout</a></h2>
-		</c:if>
+		<form action="/login" method="POST">
+			<label for="id">User ID:
+				<input type="text" id="id" name="id" value="Please enter your ID here...">
+			</label>
+			<button type="submit">Login</button>
+		</form>
 	</body>
 </html>
