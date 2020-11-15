@@ -20,6 +20,7 @@
 	</head>
 	<body>
 		<h1>Hello, <c:out value="${user.getName()}"></c:out></h1>
+		<h2><a href="/logout">Logout</a></h2>
 		<h2>Your details:</h2>
 		<form action="/user" method="POST">
 			<label for="id">User ID:
