@@ -16,7 +16,12 @@
 	</head>
 	<body>
 		<h1>Welcome to the e-Store powered by Java Spring Boot!</h1>
-		<h2><a href="/login">Login</a></h2>
+		<nav>
+			<ul>
+				<li><a href="/">Home</a></li>
+				<li><a href="/login">Login</a></li>
+			</ul>
+		</nav>
 		<h2>Register</h2>
 		<jsp:useBean id="newPersonBean" class="firstProject.beans.NewPersonBean" scope="page">
 			<form action="/register" method="POST">

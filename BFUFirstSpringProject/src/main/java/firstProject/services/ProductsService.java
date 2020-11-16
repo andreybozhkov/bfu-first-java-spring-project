@@ -7,7 +7,7 @@ import firstProject.data.dataClasses.ProductClass;
 
 @Service
 public class ProductsService {
-	private static ArrayList<ProductClass> productsArrList;
+	private static ArrayList<ProductClass> productsArrList = new ArrayList<ProductClass>();
 	
 	// methods for products ArrayList
 	public ArrayList<ProductClass> getProducts() {

@@ -11,7 +11,12 @@
 	</head>
 	<body>
 		<h1>Welcome to the e-Store powered by Java Spring Boot!</h1>
-		<h2><a href="/register">Register</a></h2>
+		<nav>
+			<ul>
+				<li><a href="/">Home</a></li>
+				<li><a href="/register">Register</a></li>
+			</ul>
+		</nav>
 		<h2>Login with User ID</h2>
 		<c:if test="${error != null}">
 			<p><c:out value="${error}"></c:out></p>

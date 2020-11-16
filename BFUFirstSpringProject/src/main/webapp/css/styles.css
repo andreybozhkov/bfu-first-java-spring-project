@@ -12,3 +12,7 @@ body h2 {
 	color: #255957;
 	text-align: center;
 }
+article {
+	border: 1px solid black;
+	margin: 5px;
+}

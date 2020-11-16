@@ -2,6 +2,8 @@ package firstProject.data.dataClasses;
 
 import java.util.Map;
 import java.util.SortedSet;
+import java.util.TreeSet;
+
 import firstProject.data.interfaces.ProductInterface;
 
 public class ProductClass implements ProductInterface {
@@ -84,5 +86,7 @@ public class ProductClass implements ProductInterface {
 		this.setName(name);
 		this.setPrice(initialPrice);
 		this.setQtyAvailable(initialQty);
+		SortedSet<String> noTags = new TreeSet<String>();
+		this.tags = noTags;
 	}
 }
